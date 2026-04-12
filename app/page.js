@@ -1,5 +1,13 @@
 import Link from 'next/link';
 import EbookForm from './components/EbookForm';
+import {
+  HeroAnimate,
+  FadeUp,
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+  ScaleIn,
+} from './components/animations';
 
 function CheckIcon({ className = 'w-4 h-4' }) {
   return (
@@ -128,14 +136,12 @@ const steps = [
 
 const testimonials = [
   {
-    quote:
-      'Pearloria made my business registration stress-free. Everything was explained clearly, and the process was seamless.',
+    quote: 'Pearloria made my business registration stress-free. Everything was explained clearly, and the process was seamless.',
     author: 'Sarah O.',
     role: 'Small Business Owner',
   },
   {
-    quote:
-      'From CAC registration to TIN and trademark, Pearloria handled everything professionally. I highly recommend them to any entrepreneur.',
+    quote: 'From CAC registration to TIN and trademark, Pearloria handled everything professionally. I highly recommend them to any entrepreneur.',
     author: 'Emeka A.',
     role: 'Tech Startup Founder',
   },
@@ -152,56 +158,59 @@ export default function HomePage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
           <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3.5 py-1.5 text-emerald-400 text-xs font-semibold mb-7 tracking-wide uppercase">
-              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-              Nigeria's Trusted Business Registration Service
-            </div>
+            <HeroAnimate delay={0}>
+              <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3.5 py-1.5 text-emerald-400 text-xs font-semibold mb-7 tracking-wide uppercase">
+                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+                Nigeria's Trusted Business Registration Service
+              </div>
+            </HeroAnimate>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
-              Register, Structure &{' '}
-              <span className="text-emerald-400">Protect Your Business</span>{' '}
-              — The Right Way
-            </h1>
+            <HeroAnimate delay={0.12}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+                Register, Structure &{' '}
+                <span className="text-emerald-400">Protect Your Business</span>{' '}
+                — The Right Way
+              </h1>
+            </HeroAnimate>
 
-            <p className="text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl">
-              We help entrepreneurs legally register, structure, and protect their businesses with the
-              Corporate Affairs Commission and other regulatory bodies in Nigeria. From idea to legally
-              structured entity — the right way.
-            </p>
+            <HeroAnimate delay={0.22}>
+              <p className="text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl">
+                We help entrepreneurs legally register, structure, and protect their businesses with the
+                Corporate Affairs Commission and other regulatory bodies in Nigeria. From idea to legally
+                structured entity — the right way.
+              </p>
+            </HeroAnimate>
 
-            <div className="flex flex-wrap gap-4 mb-14">
-              <a
-                href="https://wa.me/2347072613455"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold px-7 py-3.5 rounded-lg hover:bg-emerald-500 transition-colors text-sm"
-              >
-                Register My Business
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 border border-slate-600 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-slate-800 transition-colors text-sm"
-              >
-                Book a Consultation
-              </Link>
-            </div>
+            <HeroAnimate delay={0.32}>
+              <div className="flex flex-wrap gap-4 mb-14">
+                <a
+                  href="https://wa.me/2347072613455"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold px-7 py-3.5 rounded-lg hover:bg-emerald-500 transition-colors text-sm"
+                >
+                  Register My Business
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border border-slate-600 text-white font-semibold px-7 py-3.5 rounded-lg hover:bg-slate-800 transition-colors text-sm"
+                >
+                  Book a Consultation
+                </Link>
+              </div>
+            </HeroAnimate>
 
-            {/* Trust badges */}
-            <div className="flex flex-wrap gap-5 text-sm text-slate-400">
-              {[
-                'CAC Compliant',
-                'Trusted by Startups & NGOs',
-                'No Hidden Charges',
-                'Ongoing Support',
-              ].map(badge => (
-                <div key={badge} className="flex items-center gap-1.5">
-                  <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
-                  {badge}
-                </div>
-              ))}
-            </div>
+            <HeroAnimate delay={0.42}>
+              <div className="flex flex-wrap gap-5 text-sm text-slate-400">
+                {['CAC Compliant', 'Trusted by Startups & NGOs', 'No Hidden Charges', 'Ongoing Support'].map(badge => (
+                  <div key={badge} className="flex items-center gap-1.5">
+                    <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
+                    {badge}
+                  </div>
+                ))}
+              </div>
+            </HeroAnimate>
           </div>
         </div>
       </section>
@@ -210,42 +219,45 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-              End-to-End Registration & Compliance
-            </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              One brand. One process. Total peace of mind. From registration to ongoing compliance, we handle everything.
-            </p>
+            <FadeUp>
+              <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+                End-to-End Registration & Compliance
+              </h2>
+              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+                One brand. One process. Total peace of mind. From registration to ongoing compliance, we handle everything.
+              </p>
+            </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {services.map((s, i) => (
-              <Link
-                key={i}
-                href={s.href}
-                className="group p-6 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-200 bg-white"
-              >
-                <div className="text-3xl mb-4">{s.emoji}</div>
-                <h3 className="font-bold text-slate-900 mb-2 text-[15px] group-hover:text-emerald-700 transition-colors">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">{s.desc}</p>
-                <div className="mt-4 flex items-center gap-1 text-emerald-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn more <ArrowRight />
-                </div>
-              </Link>
+              <StaggerItem key={i} className="flex">
+                <Link
+                  href={s.href}
+                  className="group p-6 rounded-2xl border border-gray-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-200 bg-white flex-1 flex flex-col"
+                >
+                  <div className="text-3xl mb-4">{s.emoji}</div>
+                  <h3 className="font-bold text-slate-900 mb-2 text-[15px] group-hover:text-emerald-700 transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 leading-relaxed flex-1">{s.desc}</p>
+                  <div className="mt-4 flex items-center gap-1 text-emerald-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more <ArrowRight />
+                  </div>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <div className="text-center mt-10">
+          <FadeUp delay={0.1} className="text-center mt-10">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors text-sm"
             >
               View all services <ArrowRight />
             </Link>
-          </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -253,26 +265,30 @@ export default function HomePage() {
       <section className="py-24 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest mb-3">Why Choose Us</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-              We Don't Just File Documents
-            </h2>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-              We help you build a business with a solid legal foundation — educating, guiding, and supporting you every step of the way.
-            </p>
+            <FadeUp>
+              <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest mb-3">Why Choose Us</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                We Don't Just File Documents
+              </h2>
+              <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+                We help you build a business with a solid legal foundation — educating, guiding, and supporting you every step of the way.
+              </p>
+            </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {features.map((f, i) => (
-              <div key={i} className="p-7 rounded-2xl bg-slate-800 border border-slate-700/50">
-                <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-5">
-                  {f.icon}
+              <StaggerItem key={i}>
+                <div className="p-7 rounded-2xl bg-slate-800 border border-slate-700/50 h-full">
+                  <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 mb-5">
+                    {f.icon}
+                  </div>
+                  <h3 className="font-bold text-white mb-2 text-[15px]">{f.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
                 </div>
-                <h3 className="font-bold text-white mb-2 text-[15px]">{f.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -280,29 +296,29 @@ export default function HomePage() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">The Process</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
-              How It Works
-            </h2>
-            <p className="text-lg text-slate-500">
-              Getting your business properly registered is simple with Pearloria.
-            </p>
+            <FadeUp>
+              <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">The Process</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">How It Works</h2>
+              <p className="text-lg text-slate-500">Getting your business properly registered is simple with Pearloria.</p>
+            </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto" delay={0.05}>
             {steps.map((step, i) => (
-              <div key={i} className="relative text-center">
-                {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-px bg-emerald-200 -z-10" />
-                )}
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-600 text-white font-extrabold text-xl mb-6 shadow-lg shadow-emerald-600/20">
-                  {step.number}
+              <StaggerItem key={i}>
+                <div className="relative text-center">
+                  {i < steps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-px bg-emerald-200 -z-10" />
+                  )}
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-600 text-white font-extrabold text-xl mb-6 shadow-lg shadow-emerald-600/20">
+                    {step.number}
+                  </div>
+                  <h3 className="font-bold text-slate-900 text-lg mb-3">{step.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
                 </div>
-                <h3 className="font-bold text-slate-900 text-lg mb-3">{step.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{step.desc}</p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -310,57 +326,60 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">Client Stories</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-              What Our Clients Say
-            </h2>
+            <FadeUp>
+              <p className="text-emerald-600 text-sm font-semibold uppercase tracking-widest mb-3">Client Stories</p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">What Our Clients Say</h2>
+            </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {testimonials.map((t, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-slate-50 border border-gray-100">
-                <div className="flex gap-0.5 mb-5">
-                  {[...Array(5)].map((_, s) => (
-                    <svg key={s} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6 italic">"{t.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">
-                    {t.author[0]}
+              <StaggerItem key={i}>
+                <div className="p-8 rounded-2xl bg-slate-50 border border-gray-100 h-full">
+                  <div className="flex gap-0.5 mb-5">
+                    {[...Array(5)].map((_, s) => (
+                      <svg key={s} className="w-5 h-5 text-amber-400 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-bold text-slate-900 text-sm">{t.author}</p>
-                    <p className="text-xs text-slate-500">{t.role}</p>
+                  <p className="text-slate-700 text-lg leading-relaxed mb-6 italic">"{t.quote}"</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">
+                      {t.author[0]}
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900 text-sm">{t.author}</p>
+                      <p className="text-xs text-slate-500">{t.role}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* ── Free Ebook ── */}
       <section className="py-24 bg-emerald-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-emerald-100 text-sm font-semibold uppercase tracking-widest mb-4">Free Resource</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-            11 Costly Business Mistakes to Avoid in 2026
-          </h2>
-          <p className="text-emerald-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Learn the most common errors entrepreneurs make — and how to start your business
-            correctly, confidently, and compliantly from day one.
-          </p>
-          <EbookForm />
-          <p className="text-emerald-200 text-xs mt-5">No spam. Just valuable business insights from Pearloria.</p>
-        </div>
+        <FadeIn>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p className="text-emerald-100 text-sm font-semibold uppercase tracking-widest mb-4">Free Resource</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+              11 Costly Business Mistakes to Avoid in 2026
+            </h2>
+            <p className="text-emerald-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+              Learn the most common errors entrepreneurs make — and how to start your business correctly, confidently, and compliantly from day one.
+            </p>
+            <EbookForm />
+            <p className="text-emerald-200 text-xs mt-5">No spam. Just valuable business insights from Pearloria.</p>
+          </div>
+        </FadeIn>
       </section>
 
       {/* ── Final CTA ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <FadeUp className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
             Ready to Register Your Business the Right Way?
           </h2>
@@ -386,7 +405,7 @@ export default function HomePage() {
               Book a Consultation
             </Link>
           </div>
-        </div>
+        </FadeUp>
       </section>
     </>
   );
