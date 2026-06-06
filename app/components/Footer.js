@@ -91,6 +91,17 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Pearloria. All rights reserved.</p>
           <p className="italic">Legal clarity. Business confidence. Structured growth.</p>
+          <p>
+            Built by{' '}
+            <a
+              href="https://bluehydralabs.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-500 hover:text-emerald-400 transition-colors"
+            >
+              Bluehydralabs
+            </a>
+          </p>
         </div>
       </div>
     </footer>
